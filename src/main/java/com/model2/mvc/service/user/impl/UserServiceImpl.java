@@ -1,12 +1,11 @@
 package com.model2.mvc.service.user.impl;
 
 import com.model2.mvc.common.Search;
+import com.model2.mvc.mapper.UserMapper;
 import com.model2.mvc.service.domain.User;
 import com.model2.mvc.service.user.UserDao;
 import com.model2.mvc.service.user.UserService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -21,30 +20,16 @@ import java.util.Map;
 public class UserServiceImpl implements UserService{
 
     private final UserDao userDao;
-//    private final User
+    private final UserMapper userMapper;
 
-	///Field
-	@Autowired
-	@Qualifier("userDao")
-	private UserDao userDao;
-	public void setUserDao(UserDao userDao) {
-		this.userDao = userDao;
-	}
-
-	///Constructor
-	public UserServiceImpl() {
-		System.out.println(this.getClass());
-	}
-
-	///Method
 	@Override
 	public void addUser(User user) throws Exception {
-		userDao.addUser(user);
+		userDao.save(userMapper.userToUserEntity(user));
 	}
 
 	@Override
 	public User getUser(String userId) throws Exception {
-		return userDao.getUser(userId);
+		return userDao.findById(userId).map(userMapper::UserEntityToUser).orElse(null);
 	}
 
 	@Override
