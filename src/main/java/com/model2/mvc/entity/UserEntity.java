@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
+import org.springframework.data.annotation.CreatedDate;
 
 import java.sql.Date;
 
@@ -43,7 +44,8 @@ public class UserEntity {
     @Column
     private String email;
 
-    @Column
+    @CreatedDate
+    @Column(updatable = false)
     private Date regDate;
 
 }

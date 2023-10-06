@@ -9,7 +9,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface UserDao extends JpaRepository<UserEntity, String> {
-
     Page<UserEntity> findByUserIdContaining(String userId, Pageable pageable);
-
 }

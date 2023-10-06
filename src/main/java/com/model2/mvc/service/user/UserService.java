@@ -1,10 +1,9 @@
 package com.model2.mvc.service.user;
 
-import java.util.List;
-import java.util.Map;
-
 import com.model2.mvc.common.Search;
 import com.model2.mvc.service.domain.User;
+
+import java.util.Map;
 
 
 public interface UserService {
@@ -19,5 +18,5 @@ public interface UserService {
 
 	public boolean checkDuplication(String userId) throws Exception;
 
-	public List<String> getAutoCompleteUser() throws Exception;
+//	public List<String> getAutoCompleteUser() throws Exception;
 }

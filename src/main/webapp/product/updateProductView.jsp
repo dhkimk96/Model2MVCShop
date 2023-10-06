@@ -1,10 +1,10 @@
-<%@ page contentType="text/html; charset=euc-kr" %>
+<%@ page contentType="text/html; charset=UTF-8" %>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <html>
 <head>
-<title>»óÇ°¼öÁ¤</title>
+<title>ìƒí’ˆìˆ˜ì •</title>
 
 <link rel="stylesheet" href="/css/admin.css" type="text/css">
 <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
@@ -13,26 +13,26 @@
 
 <script type="text/javascript">
 function fncUpdateProduct(){
-	//Form À¯È¿¼º °ËÁõ
+	//Form ìœ íš¨ì„± ê²€ì¦
 	var prodName = $("input[name='prodName']").val();
 	var prodDetail = $("input[name='prodDetail']").val();
 	var manuDate = $("input[name='manuDate']").val();
 	var price = $("input[name='price']").val();
 
 	if(prodName == null || prodName.length<1){
-		alert("»óÇ°¸íÀº ¹İµå½Ã ÀÔ·ÂÇÏ¿©¾ß ÇÕ´Ï´Ù.");
+		alert("ìƒí’ˆëª…ì€ ë°˜ë“œì‹œ ì…ë ¥í•˜ì—¬ì•¼ í•©ë‹ˆë‹¤.");
 		return;
 	}
 	if(prodDetail == null || prodDetail.length<1){
-		alert("»óÇ°»ó¼¼Á¤º¸´Â ¹İµå½Ã ÀÔ·ÂÇÏ¿©¾ß ÇÕ´Ï´Ù.");
+		alert("ìƒí’ˆìƒì„¸ì •ë³´ëŠ” ë°˜ë“œì‹œ ì…ë ¥í•˜ì—¬ì•¼ í•©ë‹ˆë‹¤.");
 		return;
 	}
 	if(manuDate == null || manuDate.length<1){
-		alert("Á¦Á¶ÀÏÀÚ´Â ¹İµå½Ã ÀÔ·ÂÇÏ¼Å¾ß ÇÕ´Ï´Ù.");
+		alert("ì œì¡°ì¼ìëŠ” ë°˜ë“œì‹œ ì…ë ¥í•˜ì…”ì•¼ í•©ë‹ˆë‹¤.");
 		return;
 	}
 	if(price == null || price.length<1){
-		alert("°¡°İÀº ¹İµå½Ã ÀÔ·ÂÇÏ¼Å¾ß ÇÕ´Ï´Ù.");
+		alert("ê°€ê²©ì€ ë°˜ë“œì‹œ ì…ë ¥í•˜ì…”ì•¼ í•©ë‹ˆë‹¤.");
 		return;
 	}
 	$("form").attr("method", "POST").attr("action", "/product/updateProduct").submit();
@@ -44,11 +44,11 @@ $(function() {
         show_calendar('document.detailForm.manuDate', $("input[name='manuDate']").val());
     });
 	
-	$("td.ct_btn01:contains('¼öÁ¤')").on("click", function() {
+	$("td.ct_btn01:contains('ìˆ˜ì •')").on("click", function() {
 		fncUpdateProduct();
 	});
 	
-	$("td.ct_btn01:contains('Ãë¼Ò')").on("click", function() {
+	$("td.ct_btn01:contains('ì·¨ì†Œ')").on("click", function() {
 		history.go(-1);
 	});
 });
@@ -70,7 +70,7 @@ $(function() {
 		<td background="/images/ct_ttl_img02.gif" width="100%" style="padding-left: 10px;">
 			<table width="100%" border="0" cellspacing="0" cellpadding="0">
 				<tr>
-					<td width="93%" class="ct_ttl01">»óÇ°¼öÁ¤</td>
+					<td width="93%" class="ct_ttl01">ìƒí’ˆìˆ˜ì •</td>
 					<td width="20%" align="right">&nbsp;</td>
 				</tr>
 			</table>
@@ -87,7 +87,7 @@ $(function() {
 	</tr>
 	<tr>
 		<td width="104" class="ct_write">
-			»óÇ°¸í <img src="/images/ct_icon_red.gif" width="3" height="3" align="absmiddle"/>
+			ìƒí’ˆëª… <img src="/images/ct_icon_red.gif" width="3" height="3" align="absmiddle"/>
 		</td>
 		<td bgcolor="D6D6D6" width="1"></td>
 		<td class="ct_write01">
@@ -106,7 +106,7 @@ $(function() {
 	</tr>
 	<tr>
 		<td width="104" class="ct_write">
-			»óÇ°»ó¼¼Á¤º¸ <img	src="/images/ct_icon_red.gif" width="3" height="3" align="absmiddle"/>
+			ìƒí’ˆìƒì„¸ì •ë³´ <img	src="/images/ct_icon_red.gif" width="3" height="3" align="absmiddle"/>
 		</td>
 		<td bgcolor="D6D6D6" width="1"></td>
 		<td class="ct_write01">
@@ -119,7 +119,7 @@ $(function() {
 	</tr>
 	<tr>
 		<td width="104" class="ct_write">
-			Á¦Á¶ÀÏÀÚ <img src="/images/ct_icon_red.gif" width="3" height="3" align="absmiddle"/>
+			ì œì¡°ì¼ì <img src="/images/ct_icon_red.gif" width="3" height="3" align="absmiddle"/>
 		</td>
 		<td bgcolor="D6D6D6" width="1"></td>
 		<td class="ct_write01">
@@ -135,19 +135,19 @@ $(function() {
 	</tr>
 	<tr>
 		<td width="104" class="ct_write">
-			°¡°İ <img src="/images/ct_icon_red.gif" width="3" height="3" align="absmiddle"/>
+			ê°€ê²© <img src="/images/ct_icon_red.gif" width="3" height="3" align="absmiddle"/>
 		</td>
 		<td bgcolor="D6D6D6" width="1"></td>
 		<td class="ct_write01">
 			<input type="text" name="price" value="${product.price}"
-						class="ct_input_g" style="width: 100px; height: 19px" maxLength="50"/>&nbsp;¿ø
+						class="ct_input_g" style="width: 100px; height: 19px" maxLength="50"/>&nbsp;ì›
 		</td>
 	</tr>
 	<tr>
 		<td height="1" colspan="3" bgcolor="D6D6D6"></td>
 	</tr>
 	<tr>
-		<td width="104" class="ct_write">»óÇ°ÀÌ¹ÌÁö</td>
+		<td width="104" class="ct_write">ìƒí’ˆì´ë¯¸ì§€</td>
 		<td bgcolor="D6D6D6" width="1"></td>
 		<td class="ct_write01">
 			<input	type="file" name="fileName" class="ct_input_g" 
@@ -169,7 +169,7 @@ $(function() {
 						<img src="/images/ct_btnbg01.gif" width="17" height="23"/>
 					</td>
 					<td background="/images/ct_btnbg02.gif" class="ct_btn01"	style="padding-top: 3px;">
-						¼öÁ¤
+						ìˆ˜ì •
 					</td>
 					<td width="14" height="23">
 						<img src="/images/ct_btnbg03.gif" width="14" height="23"/>
@@ -179,7 +179,7 @@ $(function() {
 						<img src="/images/ct_btnbg01.gif"width="17" height="23"/>
 					</td>
 					<td background="/images/ct_btnbg02.gif" class="ct_btn01" style="padding-top: 3px;">
-						Ãë¼Ò
+						ì·¨ì†Œ
 					</td>
 					<td width="14" height="23">
 						<img src="/images/ct_btnbg03.gif" width="14" height="23"/>
