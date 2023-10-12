@@ -8,6 +8,7 @@ import org.hibernate.annotations.DynamicUpdate;
 import org.springframework.data.annotation.CreatedDate;
 
 import java.sql.Date;
+import java.util.List;
 
 @ToString
 @Getter
@@ -16,7 +17,8 @@ import java.sql.Date;
 @NoArgsConstructor
 @DynamicInsert
 @DynamicUpdate
-@Entity(name="users")
+@Table(name = "users")
+@Entity
 public class UserEntity {
 
     @Id
@@ -48,4 +50,6 @@ public class UserEntity {
     @Column(updatable = false)
     private Date regDate;
 
+    @OneToMany(mappedBy = "userEntity",fetch = FetchType.LAZY)
+    private List<PurchaseEntity> purchaseEntities;
 }
