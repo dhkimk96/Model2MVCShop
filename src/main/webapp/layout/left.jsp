@@ -1,5 +1,5 @@
-<%@ page contentType="text/html; charset=EUC-KR" %>
-<%@ page pageEncoding="EUC-KR"%>
+<%@ page contentType="text/html; charset=UTF-8" %>
+<%@ page pageEncoding="UTF-8"%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
@@ -7,13 +7,13 @@
 <html>
 
 <head>
-	<meta charset="EUC-KR">
+	<meta charset="UTF-8">
 	
 	<title>Model2 MVC Shop</title>
 
 	<link href="/css/left.css" rel="stylesheet" type="text/css">
 	
-	<!-- CDN(Content Delivery Network) È£½ºÆ® »ç¿ë -->
+	<!-- CDN(Content Delivery Network) í˜¸ìŠ¤íŠ¸ ì‚¬ìš© -->
 	<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
 	<script type="text/javascript">
 	
@@ -23,46 +23,46 @@
 														"left=300, top=200, width=300, height=200, marginwidth=0, marginheight=0, scrollbars=no, scrolling=no, menubar=no, resizable=no");
 		}
 	
-		//==> jQuery Àû¿ë Ãß°¡µÈ ºÎºĞ
+		//==> jQuery ì ìš© ì¶”ê°€ëœ ë¶€ë¶„
 		 $(function() {
 			 
-			//==> °³ÀÎÁ¤º¸Á¶È¸ Event ¿¬°áÃ³¸®ºÎºĞ
-			//==> DOM Object GET 3°¡Áö ¹æ¹ı ==> 1. $(tagName) : 2.(#id) : 3.$(.className)
-		 	$( ".Depth03:contains('°³ÀÎÁ¤º¸Á¶È¸')" ).on("click" , function() {
+			//==> ê°œì¸ì •ë³´ì¡°íšŒ Event ì—°ê²°ì²˜ë¦¬ë¶€ë¶„
+			//==> DOM Object GET 3ê°€ì§€ ë°©ë²• ==> 1. $(tagName) : 2.(#id) : 3.$(.className)
+		 	$( ".Depth03:contains('ê°œì¸ì •ë³´ì¡°íšŒ')" ).on("click" , function() {
 				//Debug..
-				//alert(  $( ".Depth03:contains('°³ÀÎÁ¤º¸Á¶È¸')" ).html() );
+				//alert(  $( ".Depth03:contains('ê°œì¸ì •ë³´ì¡°íšŒ')" ).html() );
 				$(window.parent.frames["rightFrame"].document.location).attr("href","/user/getUser?userId=${user.userId}");
 			});
 			
-			//==> È¸¿øÁ¤º¸Á¶È¸ Event ¿¬°áÃ³¸®ºÎºĞ
-			//==> DOM Object GET 3°¡Áö ¹æ¹ı ==> 1. $(tagName) : 2.(#id) : 3.$(.className)
-		 	$( ".Depth03:contains('È¸¿øÁ¤º¸Á¶È¸')" ).on("click" , function() {
+			//==> íšŒì›ì •ë³´ì¡°íšŒ Event ì—°ê²°ì²˜ë¦¬ë¶€ë¶„
+			//==> DOM Object GET 3ê°€ì§€ ë°©ë²• ==> 1. $(tagName) : 2.(#id) : 3.$(.className)
+		 	$( ".Depth03:contains('íšŒì›ì •ë³´ì¡°íšŒ')" ).on("click" , function() {
 				//Debug..
-				//alert(  $( ".Depth03:contains('È¸¿øÁ¤º¸Á¶È¸')" ) );
+				//alert(  $( ".Depth03:contains('íšŒì›ì •ë³´ì¡°íšŒ')" ) );
 		 		$(window.parent.frames["rightFrame"].document.location).attr("href","/user/listUser");
 			}); 
 			
-		 	$( ".Depth03:contains('ÆÇ¸Å»óÇ°µî·Ï')" ).on("click" , function() {
+		 	$( ".Depth03:contains('íŒë§¤ìƒí’ˆë“±ë¡')" ).on("click" , function() {
 				//Debug..
-				//alert(  $( ".Depth03:contains('ÆÇ¸Å»óÇ°µî·Ï')" ) );
+				//alert(  $( ".Depth03:contains('íŒë§¤ìƒí’ˆë“±ë¡')" ) );
 		 		$(window.parent.frames["rightFrame"].document.location).attr("href","/product/addProductView.jsp");
 			}); 
 		 	
-		 	$( ".Depth03:contains('ÆÇ¸Å»óÇ°°ü¸®')" ).on("click" , function() {
+		 	$( ".Depth03:contains('íŒë§¤ìƒí’ˆê´€ë¦¬')" ).on("click" , function() {
 				//Debug..
-				//alert(  $( ".Depth03:contains('ÆÇ¸Å»óÇ°°ü¸®')" ) );
+				//alert(  $( ".Depth03:contains('íŒë§¤ìƒí’ˆê´€ë¦¬')" ) );
 		 		$(window.parent.frames["rightFrame"].document.location).attr("href","/product/listProduct?menu=manage");
 			}); 
 		 	
-		 	$( ".Depth03:contains('»ó Ç° °Ë »ö')" ).on("click" , function() {
+		 	$( ".Depth03:contains('ìƒ í’ˆ ê²€ ìƒ‰')" ).on("click" , function() {
 				//Debug..
-				//alert(  $( ".Depth03:contains('»ó Ç° °Ë »ö')" ) );
+				//alert(  $( ".Depth03:contains('ìƒ í’ˆ ê²€ ìƒ‰')" ) );
 		 		$(window.parent.frames["rightFrame"].document.location).attr("href","/product/listProduct?menu=search");
 			}); 
 		 	
-		 	$( ".Depth03:contains('ÃÖ±Ù º» »óÇ°')" ).on("click" , function() {
+		 	$( ".Depth03:contains('ìµœê·¼ ë³¸ ìƒí’ˆ')" ).on("click" , function() {
 				//Debug..
-				//alert(  $( ".Depth03:contains('ÃÖ±Ù º» »óÇ°')" ) );
+				//alert(  $( ".Depth03:contains('ìµœê·¼ ë³¸ ìƒí’ˆ')" ) );
 		 		history();
 			}); 
 		 	
@@ -84,10 +84,10 @@
 				<c:if test="${ !empty user }">
 					<tr>
 						<td class="Depth03">
-							<!-- ////////////////// jQuery Event Ã³¸®·Î º¯°æµÊ ///////////////////////// 
-							<a href="/user/getUser?userId=${user.userId}" target="rightFrame">°³ÀÎÁ¤º¸Á¶È¸</a>	
+							<!-- ////////////////// jQuery Event ì²˜ë¦¬ë¡œ ë³€ê²½ë¨ ///////////////////////// 
+							<a href="/user/getUser?userId=${user.userId}" target="rightFrame">ê°œì¸ì •ë³´ì¡°íšŒ</a>	
 							////////////////////////////////////////////////////////////////////////////////////////////////// -->
-							°³ÀÎÁ¤º¸Á¶È¸
+							ê°œì¸ì •ë³´ì¡°íšŒ
 						</td>
 					</tr>
 				</c:if>
@@ -95,10 +95,10 @@
 				<c:if test="${user.role == 'admin'}">
 					<tr>
 						<td class="Depth03" >
-							<!-- ////////////////// jQuery Event Ã³¸®·Î º¯°æµÊ ///////////////////////// 
-							<a href="/user/listUser" target="rightFrame">È¸¿øÁ¤º¸Á¶È¸</a>	
+							<!-- ////////////////// jQuery Event ì²˜ë¦¬ë¡œ ë³€ê²½ë¨ ///////////////////////// 
+							<a href="/user/listUser" target="rightFrame">íšŒì›ì •ë³´ì¡°íšŒ</a>	
 							////////////////////////////////////////////////////////////////////////////////////////////////// -->
-							È¸¿øÁ¤º¸Á¶È¸
+							íšŒì›ì •ë³´ì¡°íšŒ
 						</td>
 					</tr>
 				</c:if>
@@ -117,14 +117,14 @@
 			<table  border="0" cellspacing="0" cellpadding="0" width="159">
 				<tr>
 					<td class="Depth03">
-						<!-- <a href="../product/addProductView.jsp;" target="rightFrame">ÆÇ¸Å»óÇ°µî·Ï</a> -->
-						ÆÇ¸Å»óÇ°µî·Ï
+						<!-- <a href="../product/addProductView.jsp;" target="rightFrame">íŒë§¤ìƒí’ˆë“±ë¡</a> -->
+						íŒë§¤ìƒí’ˆë“±ë¡
 					</td>
 				</tr>
 				<tr>
 					<td class="Depth03">
-						<!-- <a href="/listProduct.do?menu=manage"  target="rightFrame">ÆÇ¸Å»óÇ°°ü¸®</a> -->
-						ÆÇ¸Å»óÇ°°ü¸®
+						<!-- <a href="/listProduct.do?menu=manage"  target="rightFrame">íŒë§¤ìƒí’ˆê´€ë¦¬</a> -->
+						íŒë§¤ìƒí’ˆê´€ë¦¬
 					</td>
 				</tr>
 				<tr>
@@ -141,16 +141,16 @@
 		<table  border="0" cellspacing="0" cellpadding="0" width="159">
 			<tr>
 				<td class="Depth03">
-					<!-- <a href="product/listProduct?menu=search" target="rightFrame">»ó Ç° °Ë »ö</a> -->
-					»ó Ç° °Ë »ö
+					<!-- <a href="product/listProduct?menu=search" target="rightFrame">ìƒ í’ˆ ê²€ ìƒ‰</a> -->
+					ìƒ í’ˆ ê²€ ìƒ‰
 				</td>
 			</tr>
 			
 			<c:if test="${ !empty user && user.role == 'user'}">
 			<tr>
 				<td class="Depth03">
-					<!-- <a href="/listPurchase.do"  target="rightFrame">±¸¸ÅÀÌ·ÂÁ¶È¸</a> -->
-					±¸¸ÅÀÌ·ÂÁ¶È¸
+					<!-- <a href="/listPurchase.do"  target="rightFrame">êµ¬ë§¤ì´ë ¥ì¡°íšŒ</a> -->
+					êµ¬ë§¤ì´ë ¥ì¡°íšŒ
 				</td>
 			</tr>
 			</c:if>
@@ -160,8 +160,8 @@
 			</tr>
 			<tr>
 				<td class="Depth03">
-					<!-- <a href="javascript:history()">ÃÖ±Ù º» »óÇ°</a> -->
-					ÃÖ±Ù º» »óÇ°
+					<!-- <a href="javascript:history()">ìµœê·¼ ë³¸ ìƒí’ˆ</a> -->
+					ìµœê·¼ ë³¸ ìƒí’ˆ
 				</td>
 			</tr>
 		</table>

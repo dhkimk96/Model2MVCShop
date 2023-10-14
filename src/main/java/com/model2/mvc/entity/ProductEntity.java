@@ -5,8 +5,10 @@ import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
+import org.springframework.data.annotation.CreatedDate;
 
 import java.sql.Date;
+import java.util.List;
 
 @ToString
 @Getter
@@ -15,7 +17,8 @@ import java.sql.Date;
 @NoArgsConstructor
 @DynamicInsert
 @DynamicUpdate
-@Entity(name="product")
+@Table(name = "product")
+@Entity
 public class ProductEntity {
 
 
@@ -31,7 +34,7 @@ public class ProductEntity {
     private String prodDetail;
 
     @Column
-    private String manufactureDay;
+    private Date manuDate;
 
     @Column
     private int price;
@@ -39,8 +42,11 @@ public class ProductEntity {
     @Column(name = "image_file")
     private String fileName;
 
-    @Column
+    @CreatedDate
+    @Column(updatable = false)
     private Date regDate;
 
+    @OneToMany(mappedBy = "productEntity",fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<PurchaseEntity> purchaseEntities;
 }
 

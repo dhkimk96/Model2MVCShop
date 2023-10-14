@@ -16,7 +16,7 @@ public class Product {
 	private String prodName;
 	private String prodDetail;
 	private int price;
-	private Date manufactureDay;
+	private String manuDate;
 	private String fileName;
 	private String proTranCode;
 	private Date regDate;

@@ -1,11 +1,11 @@
-<%@ page contentType="text/html; charset=euc-kr" %>
+<%@ page contentType="text/html; charset=UTF-8" %>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <html>
 <head>
-<meta charset="EUC-KR">
-<title>»óÇ° ¸ñ·ÏÁ¶È¸</title>
+<meta charset="UTF-8">
+<title>ìƒí’ˆ ëª©ë¡ì¡°íšŒ</title>
 
 <link rel="stylesheet" href="/css/admin.css" type="text/css">
 <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
@@ -21,7 +21,7 @@ function fncGetList(currentPage) {
 
 
 $(function() {
-	 $( "td.ct_btn01:contains('°Ë»ö')" ).on("click" , function(event) {
+	 $( "td.ct_btn01:contains('ê²€ìƒ‰')" ).on("click" , function(event) {
 		 fncGetList(1);
 		    if(event.keyCode == '13'){
 		        fncGetList(1);
@@ -54,12 +54,12 @@ $(function() {
 
 							var displayValue =
 									"<h3>" 
-									+ "»óÇ°¹øÈ£ : "+ JSONData.prodNo + "<br/>" 
-									+ "»óÇ°¸í : "+ JSONData.prodName + "<br/>" 
-									+ "»ó¼¼Á¤º¸ : "+ JSONData.prodDetail + "<br/>" 
-									+ "°¡   °İ : "+ JSONData.price + "<br/>"
-									+ "Á¦Á¶ÀÏÀÚ : "+ JSONData.manuDate + "<br/>"
-									+ "»óÇ°ÀÌ¹ÌÁö : "
+									+ "ìƒí’ˆë²ˆí˜¸ : "+ JSONData.prodNo + "<br/>" 
+									+ "ìƒí’ˆëª… : "+ JSONData.prodName + "<br/>" 
+									+ "ìƒì„¸ì •ë³´ : "+ JSONData.prodDetail + "<br/>" 
+									+ "ê°€   ê²© : "+ JSONData.price + "<br/>"
+									+ "ì œì¡°ì¼ì : "+ JSONData.manuDate + "<br/>"
+									+ "ìƒí’ˆì´ë¯¸ì§€ : "
 									+"<br/>"
 									+"<img src = /images/uploadFiles/"+JSONData.fileName+" width='300' height='300'/>"
 									+"<br/>"
@@ -74,11 +74,11 @@ $(function() {
 
 				});
 
-		//==> userId LINK Event End User ¿¡°Ô º¸ÀÏ¼ö ÀÖµµ·Ï 
+		//==> userId LINK Event End User ì—ê²Œ ë³´ì¼ìˆ˜ ìˆë„ë¡ 
 		$(".ct_list_pop td:nth-child(3)").css("color", "red");
 		$("h7").css("color", "red");
 
-		//==> ¾Æ·¡¿Í °°ÀÌ Á¤ÀÇÇÑ ÀÌÀ¯´Â ??
+		//==> ì•„ë˜ì™€ ê°™ì´ ì •ì˜í•œ ì´ìœ ëŠ” ??
 		$(".ct_list_pop:nth-child(4n+6)").css("background-color", "whitesmoke");
 
 		$(".ct_list_pop td:nth-child(9)").on("click",function() {
@@ -156,7 +156,7 @@ $(window).on("scroll" , function(){
 																		+"<td align='left'>"+product.regDate+"</td>"
 																		+"<td></td>"
 																		+"<td align='left'>"
-																		+(product.proTranCode == null ? "ÆÇ¸ÅÁß" : "Àç°í ¾øÀ½")
+																		+(product.proTranCode == null ? "íŒë§¤ì¤‘" : "ì¬ê³  ì—†ìŒ")
 																		+"</td>"
 																		+"</tr>"
 																		+"<tr>"
@@ -192,7 +192,7 @@ $(window).on("scroll" , function(){
 			<table width="100%" border="0" cellspacing="0" cellpadding="0">
 				<tr>
 					<td width="93%" class="ct_ttl01">
-							${param.menu.equals('manage') ? "»óÇ°°ü¸®" : "»óÇ° ¸ñ·ÏÁ¶È¸"}
+							${param.menu.equals('manage') ? "ìƒí’ˆê´€ë¦¬" : "ìƒí’ˆ ëª©ë¡ì¡°íšŒ"}
 					</td>
 				</tr>
 			</table>
@@ -208,9 +208,9 @@ $(window).on("scroll" , function(){
 	
 		<td align="right">
 			<select id="searchCondition" name="searchCondition" class="ct_input_g" style="width:80px">
-				<option value="0" ${ ! empty search.searchCondition && search.searchCondition==0 ? "selected" : "" }>»óÇ°¹øÈ£</option>
-				<option value="1" ${ ! empty search.searchCondition && search.searchCondition==1 ? "selected" : "" }>»óÇ°¸í</option>
-				<option value="2" ${ ! empty search.searchCondition && search.searchCondition==2 ? "selected" : "" }>»óÇ°°¡°İ</option>
+				<option value="0" ${ ! empty search.searchCondition && search.searchCondition==0 ? "selected" : "" }>ìƒí’ˆë²ˆí˜¸</option>
+				<option value="1" ${ ! empty search.searchCondition && search.searchCondition==1 ? "selected" : "" }>ìƒí’ˆëª…</option>
+				<option value="2" ${ ! empty search.searchCondition && search.searchCondition==2 ? "selected" : "" }>ìƒí’ˆê°€ê²©</option>
 			</select>
 			
 			<!-- <label for = "searchBox"></label> -->
@@ -225,7 +225,7 @@ $(window).on("scroll" , function(){
 						<img src="/images/ct_btnbg01.gif" width="17" height="23">
 					</td>
 					<td background="/images/ct_btnbg02.gif" class="ct_btn01" style="padding-top:3px;">
-						°Ë»ö
+						ê²€ìƒ‰
 					</td>
 					<td width="14" height="23">
 						<img src="/images/ct_btnbg03.gif" width="14" height="23">
@@ -241,21 +241,21 @@ $(window).on("scroll" , function(){
 	<tbody id="prodRow" >
 	<tr>
 		<td colspan="11" >
-		ÀüÃ¼  ${resultPage.totalCount } °Ç¼ö,	ÇöÀç ${resultPage.currentPage } ÆäÀÌÁö
+		ì „ì²´  ${resultPage.totalCount } ê±´ìˆ˜,	í˜„ì¬ ${resultPage.currentPage } í˜ì´ì§€
 		</td>
 	</tr>
 	<tr>
 		<td class="ct_list_b" width="100">No</td>
 		<td class="ct_line02"></td>
-		<td class="ct_list_b" width="150">»óÇ°¸í</td>
+		<td class="ct_list_b" width="150">ìƒí’ˆëª…</td>
 		<td class="ct_line02"></td>
-		<td class="ct_list_b" width="150">»óÇ°ÀÌ¹ÌÁö</td>
+		<td class="ct_list_b" width="150">ìƒí’ˆì´ë¯¸ì§€</td>
 		<td class="ct_line02"></td>
-		<td class="ct_list_b" width="150">°¡°İ</td>
+		<td class="ct_list_b" width="150">ê°€ê²©</td>
 		<td class="ct_line02"></td>
-		<td class="ct_list_b">µî·ÏÀÏ</td>	
+		<td class="ct_list_b">ë“±ë¡ì¼</td>	
 		<td class="ct_line02"></td>
-		<td class="ct_list_b">ÇöÀç»óÅÂ</td>	
+		<td class="ct_list_b">í˜„ì¬ìƒíƒœ</td>	
 	</tr>
 	<tr>
 		<td colspan="11" bgcolor="808285" height="1"></td>
@@ -284,18 +284,18 @@ $(window).on("scroll" , function(){
 		<c:if test="${param.menu.equals('manage')}">
 				<c:if  test="${product.proTranCode == 100}">
 					<td align="left">
-					±¸¸Å¿Ï·á
-					¹è¼ÛÇÏ±â
+					êµ¬ë§¤ì™„ë£Œ
+					ë°°ì†¡í•˜ê¸°
 					</td>
 				</c:if>
 				<c:if  test="${product.proTranCode == 200}">
 					<td align="left">
-					¹è¼Û Áß
+					ë°°ì†¡ ì¤‘
 					</td>
 				</c:if>
 				<c:if  test="${product.proTranCode == 300}">
 					<td align="left">
-					¹è¼Û¿Ï·á
+					ë°°ì†¡ì™„ë£Œ
 					</td>
 				</c:if>
 				<c:if  test="${empty product.proTranCode}">
@@ -304,7 +304,7 @@ $(window).on("scroll" , function(){
 				</c:if>
 			</c:if>
 		<c:if test="${param.menu.equals('search')}">
-			<td align="left">${ empty product.proTranCode ? "ÆÇ¸ÅÁß" : "Àç°í ¾øÀ½"}</td>
+			<td align="left">${ empty product.proTranCode ? "íŒë§¤ì¤‘" : "ì¬ê³  ì—†ìŒ"}</td>
 		</c:if>
 	</tr>
 	<tr>
@@ -321,7 +321,7 @@ $(window).on("scroll" , function(){
 	<tr>
 		<td align="center">
 		   <input type="hidden" id="currentPage" name="currentPage" value=""/>
-			<jsp:include page="../../../webapp/common/pageNavigator.jsp"/>
+			<jsp:include page="../common/pageNavigator.jsp"/>
     	</td>
 	</tr>
 </table>

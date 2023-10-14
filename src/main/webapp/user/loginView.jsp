@@ -1,44 +1,44 @@
-<%@ page contentType="text/html; charset=EUC-KR" %>
-<%@ page pageEncoding="EUC-KR"%>
+<%@ page contentType="text/html; charset=UTF-8" %>
+<%@ page pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
 <html>
 
 <head>
-	<meta charset="EUC-KR">
+	<meta charset="UTF-8">
 	
-	<title>·Î±×ÀÎ È­¸é</title>
+	<title>ë¡œê·¸ì¸ í™”ë©´</title>
 	
 	<link rel="stylesheet" href="/css/admin.css" type="text/css">
 	
-	<!-- CDN(Content Delivery Network) È£½ºÆ® »ç¿ë -->
+	<!-- CDN(Content Delivery Network) í˜¸ìŠ¤íŠ¸ ì‚¬ìš© -->
 	<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
 	<script type="text/javascript">
 	   
 		$( function() {
 			
-			//==> DOM Object GET 3°¡Áö ¹æ¹ı ==> 1. $(tagName) : 2.(#id) : 3.$(.className)
+			//==> DOM Object GET 3ê°€ì§€ ë°©ë²• ==> 1. $(tagName) : 2.(#id) : 3.$(.className)
 			$("#userId").focus();
 			
-			//==>"Login"  Event ¿¬°á
+			//==>"Login"  Event ì—°ê²°
 			$("img[src='/images/btn_login.gif']").on("click" , function() {
 
 				var id=$("input:text").val();
 				var pw=$("input:password").val();
 				
 				if(id == null || id.length <1) {
-					alert('ID ¸¦ ÀÔ·ÂÇÏÁö ¾ÊÀ¸¼Ì½À´Ï´Ù.');
+					alert('ID ë¥¼ ì…ë ¥í•˜ì§€ ì•Šìœ¼ì…¨ìŠµë‹ˆë‹¤.');
 					$("input:text").focus();
 					return;
 				}
 				
 				if(pw == null || pw.length <1) {
-					alert('ÆĞ½º¿öµå¸¦ ÀÔ·ÂÇÏÁö ¾ÊÀ¸¼Ì½À´Ï´Ù.');
+					alert('íŒ¨ìŠ¤ì›Œë“œë¥¼ ì…ë ¥í•˜ì§€ ì•Šìœ¼ì…¨ìŠµë‹ˆë‹¤.');
 					$("input:password").focus();
 					return;
 				}
 				
-				////////////////////////////////////////////////// Ãß°¡ , º¯°æµÈ ºÎºĞ ////////////////////////////////////////////////////////////
+				////////////////////////////////////////////////// ì¶”ê°€ , ë³€ê²½ëœ ë¶€ë¶„ ////////////////////////////////////////////////////////////
 				//$("form").attr("method","POST").attr("action","/user/login").attr("target","_parent").submit();
 				////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 				$.ajax( 
@@ -63,20 +63,20 @@
 								//alert( JSONData != null );
 								
 								if( JSONData != null ){
-									//[¹æ¹ı1]
+									//[ë°©ë²•1]
 									//$(window.parent.document.location).attr("href","/index.jsp");
 									
-									//[¹æ¹ı2]
+									//[ë°©ë²•2]
 									//window.parent.document.location.reload();
 									
-									//[¹æ¹ı3]
+									//[ë°©ë²•3]
 									$(window.parent.frames["topFrame"].document.location).attr("href","/layout/top.jsp");
 									$(window.parent.frames["leftFrame"].document.location).attr("href","/layout/left.jsp");
 									$(window.parent.frames["rightFrame"].document.location).attr("href","/user/getUser?userId="+JSONData.userId);
 									
-									//==> ¹æ¹ı 1 , 2 , 3 °á°ú ÇĞÀÎ
+									//==> ë°©ë²• 1 , 2 , 3 ê²°ê³¼ í•™ì¸
 								}else{
-									alert("¾ÆÀÌµğ , ÆĞ½º¿öµå¸¦ È®ÀÎÇÏ½Ã°í ´Ù½Ã ·Î±×ÀÎ...");
+									alert("ì•„ì´ë”” , íŒ¨ìŠ¤ì›Œë“œë¥¼ í™•ì¸í•˜ì‹œê³  ë‹¤ì‹œ ë¡œê·¸ì¸...");
 								}
 							}
 					}); 
@@ -86,9 +86,9 @@
 		});
 		
 		
-		//============= È¸¿ø¿ø°¡ÀÔÈ­¸éÀÌµ¿ =============
+		//============= íšŒì›ì›ê°€ì…í™”ë©´ì´ë™ =============
 		$( function() {
-			//==> Ãß°¡µÈºÎºĞ : "addUser"  Event ¿¬°á
+			//==> ì¶”ê°€ëœë¶€ë¶„ : "addUser"  Event ì—°ê²°
 			$("img[src='/images/btn_add.gif']").on("click" , function() {
 				self.location = "/user/addUser"
 			});

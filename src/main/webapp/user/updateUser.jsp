@@ -1,5 +1,5 @@
-<%@ page contentType="text/html; charset=EUC-KR" %>
-<%@ page pageEncoding="EUC-KR"%>
+<%@ page contentType="text/html; charset=UTF-8" %>
+<%@ page pageEncoding="UTF-8"%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
@@ -7,12 +7,12 @@
 <html>
 
 <head>
-	<meta charset="EUC-KR">
-	<title>È¸¿ø Á¤º¸ ¼öÁ¤</title>
+	<meta charset="UTF-8">
+	<title>íšŒì› ì •ë³´ ìˆ˜ì •</title>
 	
 	<link rel="stylesheet" href="/css/admin.css" type="text/css">
 	
-	<!-- CDN(Content Delivery Network) È£½ºÆ® »ç¿ë -->
+	<!-- CDN(Content Delivery Network) í˜¸ìŠ¤íŠ¸ ì‚¬ìš© -->
 	<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
 	<script type="text/javascript">
 		
@@ -20,7 +20,7 @@
 			var name=$("input[name='userName']").val();
 			
 			if(name == null || name.length <1){
-				alert("ÀÌ¸§Àº  ¹İµå½Ã ÀÔ·ÂÇÏ¼Å¾ß ÇÕ´Ï´Ù.");
+				alert("ì´ë¦„ì€  ë°˜ë“œì‹œ ì…ë ¥í•˜ì…”ì•¼ í•©ë‹ˆë‹¤.");
 				return;
 			}
 				
@@ -38,19 +38,19 @@
 			$("form").attr("method" , "POST").attr("action" , "/user/updateUser").submit();
 		}
 		
-		//==>"¼öÁ¤"  Event ¿¬°á
+		//==>"ìˆ˜ì •"  Event ì—°ê²°
 		 $(function() {
-			//==> DOM Object GET 3°¡Áö ¹æ¹ı ==> 1. $(tagName) : 2.(#id) : 3.$(.className)
-			//==> 1 °ú 3 ¹æ¹ı Á¶ÇÕ : $("tagName.className:filterÇÔ¼ö") »ç¿ëÇÔ.	
-			 $( "td.ct_btn01:contains('¼öÁ¤')" ).on("click" , function() {
+			//==> DOM Object GET 3ê°€ì§€ ë°©ë²• ==> 1. $(tagName) : 2.(#id) : 3.$(.className)
+			//==> 1 ê³¼ 3 ë°©ë²• ì¡°í•© : $("tagName.className:filterí•¨ìˆ˜") ì‚¬ìš©í•¨.	
+			 $( "td.ct_btn01:contains('ìˆ˜ì •')" ).on("click" , function() {
 				//Debug..
-				//alert(  $( "td.ct_btn01:contains('¼öÁ¤')" ).html() );
+				//alert(  $( "td.ct_btn01:contains('ìˆ˜ì •')" ).html() );
 				fncUpdateUser();
 			});
 		});	
 		
 	
-		//==>"ÀÌ¸ŞÀÏ" À¯È¿¼ºCheck  Event Ã³¸® ¹× ¿¬°á
+		//==>"ì´ë©”ì¼" ìœ íš¨ì„±Check  Event ì²˜ë¦¬ ë° ì—°ê²°
 		 $(function() {
 			 
 			 $("input[name='email']").on("change" , function() {
@@ -58,20 +58,20 @@
 				 var email=$("input[name='email']").val();
 			    
 				 if(email != "" && (email.indexOf('@') < 1 || email.indexOf('.') == -1) ){
-			    	alert("ÀÌ¸ŞÀÏ Çü½ÄÀÌ ¾Æ´Õ´Ï´Ù.");
+			    	alert("ì´ë©”ì¼ í˜•ì‹ì´ ì•„ë‹™ë‹ˆë‹¤.");
 			     }
 			});
 			 
 		});	
 		
 		
-		//==>"Ãë¼Ò"  Event ¿¬°á ¹× Ã³¸®
+		//==>"ì·¨ì†Œ"  Event ì—°ê²° ë° ì²˜ë¦¬
 		 $(function() {
-			//==> DOM Object GET 3°¡Áö ¹æ¹ı ==> 1. $(tagName) : 2.(#id) : 3.$(.className)
-			//==> 1 °ú 3 ¹æ¹ı Á¶ÇÕ : $("tagName.className:filterÇÔ¼ö") »ç¿ëÇÔ.	
-			 $( "td.ct_btn01:contains('Ãë¼Ò')" ).on("click" , function() {
+			//==> DOM Object GET 3ê°€ì§€ ë°©ë²• ==> 1. $(tagName) : 2.(#id) : 3.$(.className)
+			//==> 1 ê³¼ 3 ë°©ë²• ì¡°í•© : $("tagName.className:filterí•¨ìˆ˜") ì‚¬ìš©í•¨.	
+			 $( "td.ct_btn01:contains('ì·¨ì†Œ')" ).on("click" , function() {
 				//Debug..
-				//alert(  $( "td.ct_btn01:contains('Ãë¼Ò')" ).html() );
+				//alert(  $( "td.ct_btn01:contains('ì·¨ì†Œ')" ).html() );
 				history.go(-1);
 			});
 		});
@@ -94,7 +94,7 @@
 		<td background="/images/ct_ttl_img02.gif" width="100%" style="padding-left:10px;">
 			<table width="100%" border="0" cellspacing="0" cellpadding="0">
 				<tr>
-					<td width="93%" class="ct_ttl01">È¸¿øÁ¤º¸¼öÁ¤</td>
+					<td width="93%" class="ct_ttl01">íšŒì›ì •ë³´ìˆ˜ì •</td>
 					<td width="20%" align="right">&nbsp;</td>
 				</tr>
 			</table>
@@ -112,7 +112,7 @@
 	
 	<tr>
 		<td width="104" class="ct_write">
-			¾ÆÀÌµğ <img src="/images/ct_icon_red.gif" width="3" height="3" align="absmiddle" />
+			ì•„ì´ë”” <img src="/images/ct_icon_red.gif" width="3" height="3" align="absmiddle" />
 		</td>
 		<td bgcolor="D6D6D6" width="1"></td>
 		<td class="ct_write01">${user.userId}	</td>
@@ -124,7 +124,7 @@
 	
 	<tr>
 		<td width="104" class="ct_write">
-			ÀÌ¸§ <img src="/images/ct_icon_red.gif" width="3" height="3" align="absmiddle" />
+			ì´ë¦„ <img src="/images/ct_icon_red.gif" width="3" height="3" align="absmiddle" />
 		</td>
 		<td bgcolor="D6D6D6" width="1"></td>
 		<td class="ct_write01">
@@ -138,7 +138,7 @@
 	</tr>
 	
 	<tr>
-		<td width="104" class="ct_write">ÁÖ¼Ò</td>
+		<td width="104" class="ct_write">ì£¼ì†Œ</td>
 		<td bgcolor="D6D6D6" width="1"></td>
 		<td class="ct_write01">
 			<input 	type="text" name="addr" value="${user.addr}" class="ct_input_g" 
@@ -151,7 +151,7 @@
 	</tr>
 	
 	<tr>
-		<td width="104" class="ct_write">ÈŞ´ëÀüÈ­¹øÈ£</td>
+		<td width="104" class="ct_write">íœ´ëŒ€ì „í™”ë²ˆí˜¸</td>
 		<td bgcolor="D6D6D6" width="1"></td>
 		<td class="ct_write01">
 			<select name="phone1" class="ct_input_g" style="width:50px; height:25px" 
@@ -178,7 +178,7 @@
 	</tr>
 	
 	<tr>
-		<td width="104" class="ct_write">ÀÌ¸ŞÀÏ </td>
+		<td width="104" class="ct_write">ì´ë©”ì¼ </td>
 		<td bgcolor="D6D6D6" width="1"></td>
 		<td class="ct_write01">
 			<input 	type="text" name="email" value="${user.email}" class="ct_input_g" 
@@ -201,7 +201,7 @@
 						<img src="/images/ct_btnbg01.gif" width="17" height="23" />
 					</td>
 					<td background="/images/ct_btnbg02.gif" class="ct_btn01" style="padding-top:3px;">
-						 ¼öÁ¤
+						 ìˆ˜ì •
 					</td>
 					<td width="14" height="23">
 						<img src="/images/ct_btnbg03.gif" width="14" height="23" />
@@ -211,7 +211,7 @@
 						<img src="/images/ct_btnbg01.gif" width="17" height="23" />
 					</td>
 					<td background="/images/ct_btnbg02.gif" class="ct_btn01" style="padding-top:3px;">
-						 Ãë¼Ò
+						 ì·¨ì†Œ
 					</td>
 					<td width="14" height="23">
 						<img src="/images/ct_btnbg03.gif" width="14" height="23" />

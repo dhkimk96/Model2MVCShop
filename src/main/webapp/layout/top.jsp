@@ -1,5 +1,5 @@
-<%@ page contentType="text/html; charset=EUC-KR" %>
-<%@ page pageEncoding="EUC-KR"%>
+<%@ page contentType="text/html; charset=UTF-8" %>
+<%@ page pageEncoding="UTF-8"%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
@@ -7,21 +7,21 @@
 <html>
 
 <head>
-	<meta charset="EUC-KR">
+	<meta charset="UTF-8">
 	
 	<title>Model2 MVC Shop</title>
 	
 	<link href="/css/left.css" rel="stylesheet" type="text/css">
 	
-	<!-- CDN(Content Delivery Network) È£½ºÆ® »ç¿ë -->
+	<!-- CDN(Content Delivery Network) í˜¸ìŠ¤íŠ¸ ì‚¬ìš© -->
 	<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
 	<script type="text/javascript">
 	
-		//==> jQuery Àû¿ë Ãß°¡µÈ ºÎºÐ
+		//==> jQuery ì ìš© ì¶”ê°€ëœ ë¶€ë¶„
 		 $(function() {
 			 
-			//==> login Event ¿¬°áÃ³¸®ºÎºÐ
-			//==> DOM Object GET 3°¡Áö ¹æ¹ý ==> 1. $(tagName) : 2.(#id) : 3.$(.className)
+			//==> login Event ì—°ê²°ì²˜ë¦¬ë¶€ë¶„
+			//==> DOM Object GET 3ê°€ì§€ ë°©ë²• ==> 1. $(tagName) : 2.(#id) : 3.$(.className)
 		 	$( "td[width='115']:contains('login')" ).on("click" , function() {
 				//Debug..
 				//alert(  $( "td[width='115']:contains('login')" ).html() );
@@ -29,8 +29,8 @@
 			});
 			
 			
-			//==> login Event ¿¬°áÃ³¸®ºÎºÐ
-			//==> DOM Object GET 3°¡Áö ¹æ¹ý ==> 1. $(tagName) : 2.(#id) : 3.$(.className)
+			//==> login Event ì—°ê²°ì²˜ë¦¬ë¶€ë¶„
+			//==> DOM Object GET 3ê°€ì§€ ë°©ë²• ==> 1. $(tagName) : 2.(#id) : 3.$(.className)
 		 	$( "td[width='56']:contains('logout')" ).on("click" , function() {
 				//Debug..
 				//alert(  $( "td[width='56']:contains('logout')" ).html() );
@@ -58,7 +58,7 @@
 	        <tr> 
 	          <td width="115">
 		          <c:if test="${ empty user }">
-		              <!-- ////////////////// jQuery Event Ã³¸®·Î º¯°æµÊ ///////////////////////// 
+		              <!-- ////////////////// jQuery Event ì²˜ë¦¬ë¡œ ë³€ê²½ë¨ ///////////////////////// 
 						<a href="/user/login" target="rightFrame">login</a>	
 						////////////////////////////////////////////////////////////////////////////////////////////////// -->
 						login
@@ -67,7 +67,7 @@
 	          <td width="14">&nbsp;</td>
 	          <td width="56">
 		          <c:if test="${ ! empty user }">
-		          		 <!-- ////////////////// jQuery Event Ã³¸®·Î º¯°æµÊ ///////////////////////// 
+		          		 <!-- ////////////////// jQuery Event ì²˜ë¦¬ë¡œ ë³€ê²½ë¨ ///////////////////////// 
 		            	<a href="/logout.do" target="_parent">logout</a>
 						////////////////////////////////////////////////////////////////////////////////////////////////// -->
 		            	logout

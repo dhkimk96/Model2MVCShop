@@ -1,5 +1,5 @@
-<%@ page contentType="text/html; charset=EUC-KR" %>
-<%@ page pageEncoding="EUC-KR"%>
+<%@ page contentType="text/html; charset=UTF-8" %>
+<%@ page pageEncoding="UTF-8"%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
@@ -7,13 +7,13 @@
 <html>
 
 <head>
-	<meta charset="EUC-KR">
+	<meta charset="UTF-8">
 	
-	<title>¾ÆÀÌµğ Áßº¹ È®ÀÎ</title>
+	<title>ì•„ì´ë”” ì¤‘ë³µ í™•ì¸</title>
 
 	<link rel="stylesheet" href="/css/admin.css" type="text/css">
 	
-	<!-- CDN(Content Delivery Network) È£½ºÆ® »ç¿ë -->
+	<!-- CDN(Content Delivery Network) í˜¸ìŠ¤íŠ¸ ì‚¬ìš© -->
 	<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
 	<script type="text/javascript">
 	
@@ -21,11 +21,11 @@
 			
 			$("#userId").focus();
 		
-			//==> keydown Event ¿¬°á
-			//==> CallBackFunction  :  EventObject ÀÎÀÚ·Î ¹ŞÀ»¼ö ÀÖ´Ù.
-			//==> º»½Ç½À ¿¡¼­´Â
-			//==> - Event Object ¸¦ ÀÎÀÚ·Î ¹ŞÀ» ¼ö ÀÖ´Â °Í È®ÀÎ.
-			//==> - keyCode °ª alert() È®ÀÎÇÏ´Â °Í À¸·Î Á¾·á
+			//==> keydown Event ì—°ê²°
+			//==> CallBackFunction  :  EventObject ì¸ìë¡œ ë°›ì„ìˆ˜ ìˆë‹¤.
+			//==> ë³¸ì‹¤ìŠµ ì—ì„œëŠ”
+			//==> - Event Object ë¥¼ ì¸ìë¡œ ë°›ì„ ìˆ˜ ìˆëŠ” ê²ƒ í™•ì¸.
+			//==> - keyCode ê°’ alert() í™•ì¸í•˜ëŠ” ê²ƒ ìœ¼ë¡œ ì¢…ë£Œ
 			$("#userId").on("keydown" , function(event) {
 				
 				//alert("keyCode  : "+event.keyCode);
@@ -38,36 +38,36 @@
 		});
 		
 		
-		//==> "Áßº¹È®ÀÎ"  Event Ã³¸®
+		//==> "ì¤‘ë³µí™•ì¸"  Event ì²˜ë¦¬
 		$(function() {
-			//==> DOM Object GET 3°¡Áö ¹æ¹ı ==> 1. $(tagName) : 2.(#id) : 3.$(.className)
-			//==> 1 °ú 3 ¹æ¹ı Á¶ÇÕ : $("tagName.className:filterÇÔ¼ö") »ç¿ëÇÔ.				
-			$("td.ct_btn:contains('Áßº¹È®ÀÎ')").on("click" , function() {
+			//==> DOM Object GET 3ê°€ì§€ ë°©ë²• ==> 1. $(tagName) : 2.(#id) : 3.$(.className)
+			//==> 1 ê³¼ 3 ë°©ë²• ì¡°í•© : $("tagName.className:filterí•¨ìˆ˜") ì‚¬ìš©í•¨.				
+			$("td.ct_btn:contains('ì¤‘ë³µí™•ì¸')").on("click" , function() {
 				
 				//==>Debug
-				//alert($("td.ct_btn:contains('Áßº¹È®ÀÎ')").html())
+				//alert($("td.ct_btn:contains('ì¤‘ë³µí™•ì¸')").html())
 				
-				// Form À¯È¿¼º °ËÁõ
+				// Form ìœ íš¨ì„± ê²€ì¦
 				if( $("#userId").val() != null && $("#userId").val().length >0) {
 					$("form").attr("method" , "POST");
 				    $("form").attr("action" , "/user/checkDuplication");
 				    $("form").submit();
 				}else {
-					alert('¾ÆÀÌµğ´Â ¹İµå½Ã ÀÔ·ÂÇÏ¼Å¾ß ÇÕ´Ï´Ù.');
+					alert('ì•„ì´ë””ëŠ” ë°˜ë“œì‹œ ì…ë ¥í•˜ì…”ì•¼ í•©ë‹ˆë‹¤.');
 				}
 				$("#userId").focus();
 			});
 		});
 		
 		
-		//==>"»ç¿ë"  Event Ã³¸®
+		//==>"ì‚¬ìš©"  Event ì²˜ë¦¬
 		$(function() {
-			//==> DOM Object GET 3°¡Áö ¹æ¹ı ==> 1. $(tagName) : 2.(#id) : 3.$(.className)
-			//==> 1 °ú 3 ¹æ¹ı Á¶ÇÕ : $("tagName.className:filterÇÔ¼ö") »ç¿ëÇÔ.	
-			$("td.ct_btn01:contains('»ç¿ë')").on("click" , function() {
+			//==> DOM Object GET 3ê°€ì§€ ë°©ë²• ==> 1. $(tagName) : 2.(#id) : 3.$(.className)
+			//==> 1 ê³¼ 3 ë°©ë²• ì¡°í•© : $("tagName.className:filterí•¨ìˆ˜") ì‚¬ìš©í•¨.	
+			$("td.ct_btn01:contains('ì‚¬ìš©')").on("click" , function() {
 				
 				//==>Debug
-				//alert($("td.ct_btn01:contains('»ç¿ë')").html())
+				//alert($("td.ct_btn01:contains('ì‚¬ìš©')").html())
 				
 				if(opener) {
 					opener.$("input[name='userId']").val("${userId}");
@@ -79,13 +79,13 @@
 		});
 		
 		
-		//==> "´İ±â"  Event  Ã³¸®
+		//==> "ë‹«ê¸°"  Event  ì²˜ë¦¬
 		$(function() {
-			//==> DOM Object GET 3°¡Áö ¹æ¹ı ==> 1. $(tagName) : 2.(#id) : 3.$(.className)
-			//==> 1 °ú 3 ¹æ¹ı Á¶ÇÕ : $("tagName.className:filterÇÔ¼ö") »ç¿ëÇÔ.	
-			$("td.ct_btn01:contains('´İ±â')").on("click" , function() {
+			//==> DOM Object GET 3ê°€ì§€ ë°©ë²• ==> 1. $(tagName) : 2.(#id) : 3.$(.className)
+			//==> 1 ê³¼ 3 ë°©ë²• ì¡°í•© : $("tagName.className:filterí•¨ìˆ˜") ì‚¬ìš©í•¨.	
+			$("td.ct_btn01:contains('ë‹«ê¸°')").on("click" , function() {
 				//==>Debug
-				//alert($("td.ct_btn01:contains('´İ±â')").html())
+				//alert($("td.ct_btn01:contains('ë‹«ê¸°')").html())
 				window.close();
 			});
 		});
@@ -98,7 +98,7 @@
 
 <form>
 
-<!-- Å¸ÀÌÆ² ½ÃÀÛ -->
+<!-- íƒ€ì´í‹€ ì‹œì‘ -->
 <table width="100%" height="37" border="0" cellpadding="0"	cellspacing="0">
 	<tr>
 		<td width="15" height="37">
@@ -107,7 +107,7 @@
 		<td background="/images/ct_ttl_img02.gif" width="100%" style="padding-left:10px;">
 			<table width="100%" border="0" cellspacing="0" cellpadding="0">
 				<tr>
-					<td width="93%" class="ct_ttl01">IDÁßº¹È®ÀÎ</td>
+					<td width="93%" class="ct_ttl01">IDì¤‘ë³µí™•ì¸</td>
 					<td width="20%" align="right">&nbsp;</td>
 				</tr>
 			</table>
@@ -117,9 +117,9 @@
 		</td>
 	</tr>
 </table>
-<!-- Å¸ÀÌÆ² ³¡ -->
+<!-- íƒ€ì´í‹€ ë -->
 
-<!-- °Ë»ö°á°ú ½ÃÀÛ -->
+<!-- ê²€ìƒ‰ê²°ê³¼ ì‹œì‘ -->
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
 	<tr>
 		<td height="32" style="padding-left:12px;">
@@ -128,8 +128,8 @@
 					<td width="8" style="padding-bottom:3px;"><img src="/images/ct_bot_ttl01.gif" width="4" height="7"></td>
 					<td class="ct_ttl02">
 						<c:if test="${ ! empty result }">
-							${userId} ´Â »ç¿ë
-							${ result ? "" : "ºÒ" }°¡´É ÇÕ´Ï´Ù.
+							${userId} ëŠ” ì‚¬ìš©
+							${ result ? "" : "ë¶ˆ" }ê°€ëŠ¥ í•©ë‹ˆë‹¤.
 						</c:if>
 					</td>
 				</tr>
@@ -142,9 +142,9 @@
 	</tr>
 	
 </table>
-<!-- °Ë»ö°á°ú ³¡ -->
+<!-- ê²€ìƒ‰ê²°ê³¼ ë -->
 
-<!-- µî·Ï Å×ÀÌºí½ÃÀÛ -->
+<!-- ë“±ë¡ í…Œì´ë¸”ì‹œì‘ -->
 <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-top:13px;">
 	
 	<tr>
@@ -152,10 +152,10 @@
 	</tr>
 	
 	<tr>
-		<td width="104" class="ct_write">¾ÆÀÌµğ <img src="/images/ct_icon_red.gif" width="3" height="3" align="absmiddle"></td>
+		<td width="104" class="ct_write">ì•„ì´ë”” <img src="/images/ct_icon_red.gif" width="3" height="3" align="absmiddle"></td>
 		<td bgcolor="D6D6D6" width="1"></td>
 		<td class="ct_write01">
-			<!-- Å×ÀÌºí ½ÃÀÛ -->
+			<!-- í…Œì´ë¸” ì‹œì‘ -->
 			<table width="100%" border="0" cellspacing="0" cellpadding="0">
 				<tr>
 					<td width="105">
@@ -171,7 +171,7 @@
 									<img src="/images/ct_btng01.gif" width="4" height="21">
 								</td>
 								<td align="center" background="/images/ct_btng02.gif" class="ct_btn" style="padding-top:3px;">
-									Áßº¹È®ÀÎ
+									ì¤‘ë³µí™•ì¸
 								</td>
 								<td width="4" height="21">
 									<img src="/images/ct_btng03.gif" width="4" height="21"/>
@@ -182,7 +182,7 @@
 					
 				</tr>
 			</table>
-			<!-- Å×ÀÌºí ³¡ -->
+			<!-- í…Œì´ë¸” ë -->
 		</td>
 	</tr>
 
@@ -191,9 +191,9 @@
 	</tr>
 	
 </table>
-<!-- µî·ÏÅ×ÀÌºí ³¡ -->
+<!-- ë“±ë¡í…Œì´ë¸” ë -->
 
-<!-- ¹öÆ° ½ÃÀÛ -->
+<!-- ë²„íŠ¼ ì‹œì‘ -->
 <table width="100%" border="0" cellspacing="0" cellpadding="0"	style="margin-top:10px;">
 	<tr>
 		<td align="center">
@@ -205,7 +205,7 @@
 							<img src="/images/ct_btnbg01.gif" width="17" height="23"/> 
 						</td>
 						<td background="/images/ct_btnbg02.gif" class="ct_btn01" style="padding-top:3px;">
-							»ç¿ë
+							ì‚¬ìš©
 						</td>
 						<td width="14" height="23">
 							<img src="/images/ct_btnbg03.gif" width="14" height="23"/>
@@ -217,7 +217,7 @@
 						<img src="/images/ct_btnbg01.gif" width="17" height="23"/>
 					</td>
 					<td background="/images/ct_btnbg02.gif" class="ct_btn01" style="padding-top:3px;">
-						´İ±â
+						ë‹«ê¸°
 					</td>
 					<td width="14" height="23">
 						<img src="/images/ct_btnbg03.gif" width="14" height="23"/>
@@ -228,7 +228,7 @@
 		</td>
 	</tr>
 </table>
-<!-- ¹öÆ° ³¡ -->
+<!-- ë²„íŠ¼ ë -->
 </form>
 
 </body>

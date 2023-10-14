@@ -1,5 +1,5 @@
-<%@ page contentType="text/html; charset=EUC-KR" %>
-<%@ page pageEncoding="EUC-KR"%>
+<%@ page contentType="text/html; charset=UTF-8" %>
+<%@ page pageEncoding="UTF-8"%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
@@ -7,8 +7,8 @@
 <html>
 
 <head>
-	<meta charset="EUC-KR">
-	<title>È¸¿ø ¸ñ·Ï Á¶È¸</title>
+	<meta charset="UTF-8">
+	<title>íšŒì› ëª©ë¡ ì¡°íšŒ</title>
 	
 <link rel="stylesheet" href="/css/admin.css" type="text/css">
 <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
@@ -16,33 +16,33 @@
 <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
 <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 <script type="text/javascript">
-		// °Ë»ö / page µÎ°¡Áö °æ¿ì ¸ğµÎ Form Àü¼ÛÀ» À§ÇØ JavaScrpt ÀÌ¿ë  
+		// ê²€ìƒ‰ / page ë‘ê°€ì§€ ê²½ìš° ëª¨ë‘ Form ì „ì†¡ì„ ìœ„í•´ JavaScrpt ì´ìš©  
 		function fncGetList(currentPage) {
 			$("#currentPage").val(currentPage)
 			$("form").attr("method" , "POST").attr("action" , "/user/listUser").submit();
 		}
 
-		//==>"°Ë»ö" ,  userId link  Event ¿¬°á ¹× Ã³¸®
+		//==>"ê²€ìƒ‰" ,  userId link  Event ì—°ê²° ë° ì²˜ë¦¬
 		 $(function() {
 			 
-			//==> °Ë»ö Event ¿¬°áÃ³¸®ºÎºĞ
-			//==> DOM Object GET 3°¡Áö ¹æ¹ı ==> 1. $(tagName) : 2.(#id) : 3.$(.className)
-			//==> 1 °ú 3 ¹æ¹ı Á¶ÇÕ : $("tagName.className:filterÇÔ¼ö") »ç¿ëÇÔ. 
-			 $( "td.ct_btn01:contains('°Ë»ö')" ).on("click" , function(event) {
+			//==> ê²€ìƒ‰ Event ì—°ê²°ì²˜ë¦¬ë¶€ë¶„
+			//==> DOM Object GET 3ê°€ì§€ ë°©ë²• ==> 1. $(tagName) : 2.(#id) : 3.$(.className)
+			//==> 1 ê³¼ 3 ë°©ë²• ì¡°í•© : $("tagName.className:filterí•¨ìˆ˜") ì‚¬ìš©í•¨. 
+			 $( "td.ct_btn01:contains('ê²€ìƒ‰')" ).on("click" , function(event) {
 				//Debug..
-				//alert(  $( "td.ct_btn01:contains('°Ë»ö')" ).html() );
+				//alert(  $( "td.ct_btn01:contains('ê²€ìƒ‰')" ).html() );
 					fncGetList(1);
 			});
 			
 			
-			//==> userId LINK Event ¿¬°áÃ³¸®
-			//==> DOM Object GET 3°¡Áö ¹æ¹ı ==> 1. $(tagName) : 2.(#id) : 3.$(.className)
-			//==> 3 °ú 1 ¹æ¹ı Á¶ÇÕ : $(".className tagName:filterÇÔ¼ö") »ç¿ëÇÔ.
+			//==> userId LINK Event ì—°ê²°ì²˜ë¦¬
+			//==> DOM Object GET 3ê°€ì§€ ë°©ë²• ==> 1. $(tagName) : 2.(#id) : 3.$(.className)
+			//==> 3 ê³¼ 1 ë°©ë²• ì¡°í•© : $(".className tagName:filterí•¨ìˆ˜") ì‚¬ìš©í•¨.
 			$( ".ct_list_pop td:nth-child(3)" ).on("click" , function() {
 					//Debug..
 					//alert(  $( this ).text().trim() );
 					
-					//////////////////////////// Ãß°¡ , º¯°æµÈ ºÎºĞ ///////////////////////////////////
+					//////////////////////////// ì¶”ê°€ , ë³€ê²½ëœ ë¶€ë¶„ ///////////////////////////////////
 					//self.location ="/user/getUser?userId="+$(this).text().trim();
 					////////////////////////////////////////////////////////////////////////////////////////////
 					var userId = $(this).text().trim();
@@ -63,11 +63,11 @@
 									//alert("JSONData : \n"+JSONData);
 									
 									var displayValue = "<h3>"
-																+"¾ÆÀÌµğ : "+JSONData.userId+"<br/>"
-																+"ÀÌ  ¸§ : "+JSONData.userName+"<br/>"
-																+"ÀÌ¸ŞÀÏ : "+JSONData.email+"<br/>"
+																+"ì•„ì´ë”” : "+JSONData.userId+"<br/>"
+																+"ì´  ë¦„ : "+JSONData.userName+"<br/>"
+																+"ì´ë©”ì¼ : "+JSONData.email+"<br/>"
 																+"ROLE : "+JSONData.role+"<br/>"
-																+"µî·ÏÀÏ : "+JSONData.regDateString+"<br/>"
+																+"ë“±ë¡ì¼ : "+JSONData.regDateString+"<br/>"
 																+"</h3>";
 									//Debug...									
 									//alert(displayValue);
@@ -79,11 +79,11 @@
 					
 			});
 			
-			//==> userId LINK Event End User ¿¡°Ô º¸ÀÏ¼ö ÀÖµµ·Ï 
+			//==> userId LINK Event End User ì—ê²Œ ë³´ì¼ìˆ˜ ìˆë„ë¡ 
 			$( ".ct_list_pop td:nth-child(3)" ).css("color" , "red");
 			$("h7").css("color" , "red");
 			
-			//==> ¾Æ·¡¿Í °°ÀÌ Á¤ÀÇÇÑ ÀÌÀ¯´Â ??
+			//==> ì•„ë˜ì™€ ê°™ì´ ì •ì˜í•œ ì´ìœ ëŠ” ??
 			$(".ct_list_pop:nth-child(4n+6)" ).css("background-color" , "whitesmoke");
 		});	
 
@@ -138,7 +138,7 @@
 		<td background="/images/ct_ttl_img02.gif" width="100%" style="padding-left:10px;">
 			<table width="100%" border="0" cellspacing="0" cellpadding="0">
 				<tr>
-					<td width="93%" class="ct_ttl01">È¸¿ø ¸ñ·ÏÁ¶È¸</td>
+					<td width="93%" class="ct_ttl01">íšŒì› ëª©ë¡ì¡°íšŒ</td>
 				</tr>
 			</table>
 		</td>
@@ -152,8 +152,8 @@
 	<tr>
 		<td align="right">
 			<select name="searchCondition" class="ct_input_g" style="width:80px">
-				<option value="0"  ${ ! empty search.searchCondition && search.searchCondition==0 ? "selected" : "" }>È¸¿øID</option>
-				<option value="1"  ${ ! empty search.searchCondition && search.searchCondition==1 ? "selected" : "" }>È¸¿ø¸í</option>
+				<option value="0"  ${ ! empty search.searchCondition && search.searchCondition==0 ? "selected" : "" }>íšŒì›ID</option>
+				<option value="1"  ${ ! empty search.searchCondition && search.searchCondition==1 ? "selected" : "" }>íšŒì›ëª…</option>
 			</select>
 			<label for="searchBox"></label>
 			<input type="text" id="searchBox" name="searchKeyword" 
@@ -165,7 +165,7 @@
 				<tr>
 					<td width="17" height="23"><img src="/images/ct_btnbg01.gif" width="17" height="23"></td>
 					<td background="/images/ct_btnbg02.gif" class="ct_btn01" style="padding-top:3px;">
-						°Ë»ö
+						ê²€ìƒ‰
 					</td>
 					<td width="14" height="23"><img src="/images/ct_btnbg03.gif" width="14" height="23"></td>
 				</tr>
@@ -177,20 +177,20 @@
 <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-top:10px;">
 	<tr>
 		<td colspan="11" >
-			ÀüÃ¼  ${resultPage.totalCount } °Ç¼ö, ÇöÀç ${resultPage.currentPage}  ÆäÀÌÁö
+			ì „ì²´  ${resultPage.totalCount } ê±´ìˆ˜, í˜„ì¬ ${resultPage.currentPage}  í˜ì´ì§€
 		</td>
 	</tr>
 	<tr>
 		<td class="ct_list_b" width="100">No</td>
 		<td class="ct_line02"></td>
 		<td class="ct_list_b" width="150">
-			È¸¿øID<br>
-			<h7 >(id click:»ó¼¼Á¤º¸)</h7>
+			íšŒì›ID<br>
+			<h7 >(id click:ìƒì„¸ì •ë³´)</h7>
 		</td>
 		<td class="ct_line02"></td>
-		<td class="ct_list_b" width="150">È¸¿ø¸í</td>
+		<td class="ct_list_b" width="150">íšŒì›ëª…</td>
 		<td class="ct_line02"></td>
-		<td class="ct_list_b">ÀÌ¸ŞÀÏ</td>		
+		<td class="ct_list_b">ì´ë©”ì¼</td>		
 	</tr>
 	<tr>
 		<td colspan="11" bgcolor="808285" height="1"></td>
@@ -210,7 +210,7 @@
 			</td>
 		</tr>
 		<tr>
-			<!-- //////////////////////////// Ãß°¡ , º¯°æµÈ ºÎºĞ /////////////////////////////
+			<!-- //////////////////////////// ì¶”ê°€ , ë³€ê²½ëœ ë¶€ë¶„ /////////////////////////////
 			<td colspan="11" bgcolor="D6D7D6" height="1"></td>
 			////////////////////////////////////////////////////////////////////////////////////////////  -->
 			<td id="${user.userId}" colspan="11" bgcolor="D6D7D6" height="1"></td>
@@ -226,7 +226,7 @@
 		<td align="center">
 		   <input type="hidden" id="currentPage" name="currentPage" value=""/>
 	
-			<jsp:include page="../../../webapp/common/pageNavigator.jsp"/>
+			<jsp:include page="../common/pageNavigator.jsp"/>
 			
     	</td>
 	</tr>
